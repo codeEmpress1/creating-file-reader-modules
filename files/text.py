@@ -1,10 +1,8 @@
-from myinterface import ReaderInterface
+from reader import Reader
+from .file_manager import OpenFile
 
 
-
-
-
-class ReadBytesFromFile(ReaderInterface):
+class ReadTextFile(Reader):
     def __init__(self, filename, mode):
         self.filename = filename
         self.mode = mode
@@ -25,6 +23,9 @@ class ReadBytesFromFile(ReaderInterface):
     def read_last_two(self):
         all_lines = self.open(self.filename, self.mode)
         return '\n'.join(list(all_lines)[-2:])
+
+    def __next__(self):
+        pass
 
     @staticmethod
     def open(filename, mode):
