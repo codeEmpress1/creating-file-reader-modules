@@ -9,14 +9,15 @@ class ProcessSpreadSheet(ReaderInterface):
     def __init__(self, filename, mode):
         self.filename = filename
         self.mode = mode
-        # if self
 
     def read_all(self):
         # data = pd.read_csv(cwd + f"\\{self.filename}")
-        return self.open()
+        # return self.open()
+        return next(self.open())
 
     def read_first_two(self):
         first_two = pd.read_csv(cwd + f"\\{self.filename}", nrows=2)
+
         return first_two
 
     def read_last_two(self):
@@ -27,3 +28,5 @@ class ProcessSpreadSheet(ReaderInterface):
         data = pd.read_csv(cwd + f"\\{self.filename}")
         return data
 
+fil = ProcessSpreadSheet('iris.csv', 'r')
+print(fil.read_all())
