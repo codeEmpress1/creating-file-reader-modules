@@ -13,3 +13,10 @@ class Reader(ABC):
     @abstractmethod
     def read_last_two(self):
         pass
+
+    def __iter__(self):
+        return self
+
+    @abstractmethod
+    def __next__(self):
+        pass
