@@ -3,9 +3,9 @@ from .file_manager import OpenFile
 
 
 class ReadTextFile(Reader):
-    def __init__(self, filename, mode):
+    def __init__(self, filename):
         self.filename = filename
-        self.mode = mode
+        # self.mode = mode
 
     def read_all(self):
         all_data = list(line for line in self.open(self.filename, self.mode))
