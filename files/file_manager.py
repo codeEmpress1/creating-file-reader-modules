@@ -1,7 +1,7 @@
 class OpenFile:
-    def __init__(self, filename, mode):
+    def __init__(self, filename):
         self.filename = filename
-        self.mode = mode
+        # self.mode = mode
 
     def __enter__(self):
         self.file = open(self.filename, self.mode)
