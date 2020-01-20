@@ -4,7 +4,7 @@ class OpenFile:
         # self.mode = mode
 
     def __enter__(self):
-        self.file = open(self.filename, self.mode)
+        self.file = open(self.filename)
         return self.file
 
     def __exit__(self, exc_type, exc_value, exc_traceback):
